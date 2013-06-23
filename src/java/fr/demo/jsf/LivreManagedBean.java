@@ -4,11 +4,9 @@
  */
 package fr.demo.jsf;
 
-import fr.demo.cdi.Livres;
 import fr.demo.ejb.ServiceLivre;
 import fr.demo.entity.Livre;
 import java.util.List;
-import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
 
@@ -41,7 +39,7 @@ public class LivreManagedBean {
         return livresInCatalogue;
     }
 
-    private void getLivres() {
+    public void getLivres() {
         livresInCatalogue = serviceLivre.getLivres(filter);
     }
 }
