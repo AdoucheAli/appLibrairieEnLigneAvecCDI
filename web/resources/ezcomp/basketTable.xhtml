@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://java.sun.com/jsf/composite"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+    <!-- INTERFACE -->
+    <cc:interface>
+    </cc:interface>
+
+    <!-- IMPLEMENTATION -->
+    <cc:implementation>
+        <p:dataTable id="tableLivreInBasket" value ="#{basketManagedBean.livresInBasket}" var="livreinBasket">  
+
+            <f:facet name="header">  
+                Liste des livres dans le panier 
+            </f:facet>  
+
+            <p:column headerText = "titre">
+                <h:outputText value="#{livreinBasket.titre}" />  
+            </p:column>  
+
+            <p:column headerText = "auteur">  
+                <h:outputText value="#{livreinBasket.auteur}" />  
+            </p:column>  
+
+            <p:column headerText = "editeur">  
+                <h:outputText value="#{livreinBasket.editeur}" />  
+            </p:column>
+
+            <p:column headerText = "prix">  
+                <h:outputText value="#{livreinBasket.prix}" />  
+            </p:column> 
+
+            <f:facet name="footer">  
+                nombre de livres : #{fn:length(basketManagedBean.livresInBasket)}<br/>
+                total à payer : 
+                <h:outputText value="#{basketManagedBean.total}">
+                    <f:convertNumber pattern="#.##" />
+                </h:outputText>
+            </f:facet> 
+
+        </p:dataTable> 
+    </cc:implementation>
+</html>

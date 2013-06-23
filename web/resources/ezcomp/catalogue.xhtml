@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://java.sun.com/jsf/composite"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:basket = "http://java.sun.com/jsf/composite/ezcomp">
+
+    <!-- INTERFACE -->
+    <cc:interface>
+    </cc:interface>
+
+    <!-- IMPLEMENTATION -->
+    <cc:implementation>
+        <div class="navbar-form">
+            Recherche:
+            <h:inputText value="#{livreManagedBean.filter}" class = "span4">
+                <f:ajax event="keyup" render="livreTable"/>
+            </h:inputText>
+            <!--<h:commandButton value="filtrer" class="btn btn-success"/>-->
+        </div>
+        <br/>
+        <p:dataTable value="#{livreManagedBean.livresInCatalogue}" var="livre" id = "livreTable">
+            <f:facet name="header">  
+                Liste des livres  
+            </f:facet>
+            <p:column headerText="Titre" sortBy="#{livre.titre}">
+                <h:link value="#{livre.titre}" outcome="detailLivre.xhtml?livreId=#{livre.id}"/> 
+            </p:column>
+            <p:column headerText="Auteur" sortBy="#{livre.auteur}"> 
+                <h:outputText value="#{livre.auteur}" />  
+            </p:column> 
+            <p:column headerText="Editeur" sortBy="#{livre.editeur}">  
+                <h:outputText value="#{livre.editeur}" />  
+            </p:column>
+            <p:column headerText="Prix" sortBy="#{livre.prix}">  
+                <h:outputText value="#{livre.prix}" />  
+            </p:column>
+            <p:column headerText="Ajouter au panier">
+                <p:commandButton value = "ajouter" 
+                                 actionListener = "#{basketManagedBean.addLivre(livre)}"
+                                 update="@form"/>
+            </p:column>
+        </p:dataTable>
+    </cc:implementation>
+</html>

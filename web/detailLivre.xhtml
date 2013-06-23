@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition  template="./template.xhtml"
+                 xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="content">
+        <f:metadata>
+            <f:viewParam name="livreId" value="#{livreDetailManagedBean.livreId}"/>
+            <f:event type = "javax.faces.event.PreRenderComponentEvent" listener="#{livreDetailManagedBean.loadLivre()}"/>
+        </f:metadata>
+        <div class="row-fluid">
+            <div class = "span10 offset1">
+                <div class="hero-unit">
+                    <p>Detail du livre</p>
+                    <p>id : #{livreDetailManagedBean.livre.id}</p>
+                    <p>titre : #{livreDetailManagedBean.livre.titre}</p>
+                    <p>auteur : #{livreDetailManagedBean.livre.auteur}</p>
+                    <p>editeur : #{livreDetailManagedBean.livre.editeur}</p>
+                    <p>prix : #{livreDetailManagedBean.livre.prix} euros</p>
+                </div>
+            </div>
+        </div>
+    </ui:define>
+
+</ui:composition>

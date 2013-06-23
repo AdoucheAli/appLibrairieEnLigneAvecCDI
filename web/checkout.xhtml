@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition  template="./template.xhtml"
+                 xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:basket = "http://java.sun.com/jsf/composite/ezcomp"
+                 xmlns:h="http://java.sun.com/jsf/html"
+                 xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="content">
+            <basket:basketTable/>
+            <hr/>
+            <h:panelGrid columns="3" cellpadding="5">
+                <h:outputLabel for="nom" value="Nom : "/>
+                <p:inputText value="#{basketManagedBean.customer.name}" id="nom"/>
+                <h:message style="color:red" for="nom"/>
+            </h:panelGrid>
+            <p:commandButton value = "checkout" 
+                        action = "#{basketManagedBean.checkout}"
+                        update="@form"
+                        styleClass = "btn btn-success"
+                        disabled="#{(basketManagedBean.livresInBasket.size() == 0)?true:false}"/>
+            <br/>
+            <h:link value = "accueil" outcome = "index.xhtml"/>  
+    </ui:define>
+</ui:composition>
+

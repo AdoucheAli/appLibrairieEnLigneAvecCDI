@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./template.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="content">
+            <p:dataTable value="#{orderManagedBean.orders}" var="item" id = "tableOrder">
+                <f:facet name="header">  
+                    Liste des commandes
+                </f:facet>
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Id"/>
+                    </f:facet>
+                    <h:outputText value="#{item.id}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Customer name"/>
+                    </f:facet>
+                    <h:outputText value="#{item.customer.name}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="EtatCommande"/>
+                    </f:facet>
+                    <h:outputText value="#{item.etatCommande.code.nom}" id="etatCommande"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Etat suivant"/>
+                    </f:facet>
+                    <p:commandButton value="next" 
+                                     actionListener = "#{orderManagedBean.nextEtat(item)}" 
+                                     update="etatCommande, @this"
+                                     disabled="#{(item.etatCommande.code.nom == orderManagedBean.ETAT_CLOTURE)?true:false}"/>
+                </p:column>
+
+                <f:facet name="footer">  
+                    nombre de commandes : #{fn:length(orderManagedBean.orders)}
+                </f:facet> 
+            </p:dataTable>
+    </ui:define>
+</ui:composition>
