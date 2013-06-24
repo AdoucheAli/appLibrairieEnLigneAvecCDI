@@ -24,7 +24,7 @@ public class Customer implements Serializable {
     private Long id;
     
     @NotNull(message = "Veuillez rentrer un nom")
-    @Size(min = 2, max = 15, message = "veuillez saisir un nom entre 2 et 15 caractères")
+    @Size(min = 2, max = 15, message = "veuillez saisir un nom entre {min} et {max} caractères")
     private String name;
 
     
