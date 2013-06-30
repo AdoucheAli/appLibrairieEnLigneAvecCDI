@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package fr.demo.cdi;
+package fr.demo.business.control;
 
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
@@ -19,6 +19,7 @@ public class LoggingInterceptor {
     
     private static final Logger logger =
             Logger.getLogger(LoggingInterceptor.class);
+    
     @AroundInvoke
     public Object log(InvocationContext context) throws Exception{
         Object[] parameters = context.getParameters();

@@ -1,8 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package fr.demo.entity;
+package fr.demo.business.entity;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -24,7 +20,7 @@ import javax.persistence.OneToMany;
 public class EtatCommande implements Serializable {
     
     public final static String PREFIXE = "fr.demo.entity."; 
-    public final static String BY_CODE = "EtatCommande.findByCode"; 
+    public final static String BY_CODE = PREFIXE + "EtatCommande.findByCode"; 
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

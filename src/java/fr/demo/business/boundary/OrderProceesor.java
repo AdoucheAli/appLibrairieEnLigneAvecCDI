@@ -1,13 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package fr.demo.ejb;
+package fr.demo.business.boundary;
 
-import fr.demo.cdi.Logging;
-import fr.demo.entity.EnumEtatCommande;
-import fr.demo.entity.EtatCommande;
-import fr.demo.entity.WebOrder;
+import fr.demo.business.entity.EnumEtatCommande;
+import fr.demo.business.entity.EtatCommande;
+import fr.demo.business.entity.WebOrder;
+import fr.demo.business.control.Logging;
 import javax.ejb.Asynchronous;
 import javax.ejb.Stateless;
 import javax.enterprise.event.Observes;

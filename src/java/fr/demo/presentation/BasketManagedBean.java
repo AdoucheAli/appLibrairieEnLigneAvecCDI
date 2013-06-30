@@ -2,12 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package fr.demo.jsf;
+package fr.demo.presentation;
 
-import fr.demo.cdi.Livres;
-import fr.demo.entity.Customer;
-import fr.demo.entity.Livre;
-import fr.demo.entity.WebOrder;
+import fr.demo.business.control.Livres;
+import fr.demo.business.entity.Customer;
+import fr.demo.business.entity.Livre;
+import fr.demo.business.entity.WebOrder;
 import java.io.Serializable;
 import java.util.List;
 import javax.enterprise.context.SessionScoped;

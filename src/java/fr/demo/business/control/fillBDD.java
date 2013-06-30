@@ -1,13 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package fr.demo.ejb;
+package fr.demo.business.control;
 
-import fr.demo.entity.EnumEtatCommande;
-import fr.demo.entity.EtatCommande;
-import fr.demo.entity.Livre;
-import java.util.List;
+import fr.demo.business.entity.EnumEtatCommande;
+import fr.demo.business.entity.EtatCommande;
+import fr.demo.business.entity.Livre;
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
@@ -34,8 +29,8 @@ public class fillBDD {
         em.persist(new Livre("Real World Java EE Patterns, Rethinking Best Practices", "Adam Bien", "AdamBien edition", 50.60D));
         em.persist(new Livre("Real World Java EE Night Hacks", "Adam Bien", "AdamBien edition", 60.50D));
 
-        /*le flush sert a forcer l'ecriture dans la base.
-         * L'utilisation dans ce cas me permets de garder l'ordre de creation des etats avec l'ordre d'insertion.
+        /*le flush sert à forcer l'écriture dans la base.
+         * L'utilisation dans ce cas me permets de garder l'ordre de création des etats avec l'ordre d'insertion.
          */
         em.persist(new EtatCommande(EnumEtatCommande.ECV));//En Cours de Validation 
         em.flush();

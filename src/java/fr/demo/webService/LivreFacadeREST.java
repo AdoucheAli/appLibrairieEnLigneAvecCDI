@@ -4,7 +4,7 @@
  */
 package fr.demo.webService;
 
-import fr.demo.entity.Livre;
+import fr.demo.business.entity.Livre;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

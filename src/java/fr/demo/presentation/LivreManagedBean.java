@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package fr.demo.jsf;
+package fr.demo.presentation;
 
-import fr.demo.ejb.ServiceLivre;
-import fr.demo.entity.Livre;
+import fr.demo.business.boundary.ServiceLivre;
+import fr.demo.business.entity.Livre;
 import java.util.List;
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;

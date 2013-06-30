@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package fr.demo.cdi;
+package fr.demo.business.control;
 
-import fr.demo.entity.Livre;
+import fr.demo.business.entity.Livre;
 import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;

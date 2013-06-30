@@ -2,11 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package fr.demo.jsf;
+package fr.demo.presentation;
 
-import fr.demo.ejb.ServiceOrder;
-import fr.demo.entity.EnumEtatCommande;
-import fr.demo.entity.WebOrder;
+import fr.demo.business.boundary.ServiceOrder;
+import fr.demo.business.entity.EnumEtatCommande;
+import fr.demo.business.entity.WebOrder;
 import java.util.List;
 import javax.enterprise.event.Event;
 import javax.enterprise.inject.Model;
