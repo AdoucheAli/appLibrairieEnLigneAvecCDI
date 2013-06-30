@@ -1,7 +1,7 @@
 package fr.demo.business.boundary;
 
-import fr.demo.business.entity.WebOrder;
 import fr.demo.business.control.Logging;
+import fr.demo.business.entity.WebOrder;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;

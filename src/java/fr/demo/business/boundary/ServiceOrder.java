@@ -1,11 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package fr.demo.business.boundary;
 
-import fr.demo.business.entity.WebOrder;
 import fr.demo.business.control.Logging;
+import fr.demo.business.entity.WebOrder;
 import java.util.Collections;
 import java.util.List;
 import javax.ejb.Stateless;

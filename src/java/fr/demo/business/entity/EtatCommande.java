@@ -19,7 +19,7 @@ import javax.persistence.OneToMany;
 @NamedQueries({@NamedQuery(name = EtatCommande.BY_CODE,query = "select ec from EtatCommande ec where ec.code = :code")})
 public class EtatCommande implements Serializable {
     
-    public final static String PREFIXE = "fr.demo.entity."; 
+    public final static String PREFIXE = "fr.demo.business.entity."; 
     public final static String BY_CODE = PREFIXE + "EtatCommande.findByCode"; 
     
     @Id

@@ -1,9 +1,9 @@
 package fr.demo.business.boundary;
 
+import fr.demo.business.control.Logging;
 import fr.demo.business.entity.EnumEtatCommande;
 import fr.demo.business.entity.EtatCommande;
 import fr.demo.business.entity.WebOrder;
-import fr.demo.business.control.Logging;
 import javax.ejb.Asynchronous;
 import javax.ejb.Stateless;
 import javax.enterprise.event.Observes;
